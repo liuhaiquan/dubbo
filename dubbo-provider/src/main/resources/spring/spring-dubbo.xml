@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://code.alibabatech.com/schema/dubbo
+        http://code.alibabatech.com/schema/dubbo/dubbo.xsd">     
+	<!--  <dubbo:application name="hello-world-app1"/>
+	<dubbo:registry  protocol="zookeeper"  address="127.0.0.1:2181"  />
+   	<dubbo:protocol name="dubbo" port="20881" />     
+	<dubbo:service interface="com.yangs.test.service.DemoServer" ref="demoService" />
+	<bean id="demoService" class="com.yangs.test.service.impl.DemoServerImpl" />  -->
+	<!-- 以上是配置实现，下面使用注解实现 -->
+	
+	
+	<dubbo:application name="dubbo-provider"/>
+	<dubbo:registry  protocol="zookeeper"  address="192.168.140.132:2181"  />
+   	<dubbo:protocol name="dubbo" port="20881" />     
+   <!-- 	在配置文件中加上<dubbo:annotation>，是dubbo的扫描标签，它除了会扫描带有
+   	'@Component'、'@Service'、'@Controller'注解的类，把它们注册成SpringBean之外，
+   	它还会扫描带有”@Service” (dubbo的service标签)的接口实现类发布服务（必须有实现接口，不然或抛出BeanCreationException异常）
+   	。同时在要发布服务的接口实现类上加上”@Service” (dubbo的service标签)。启动服务器，服务就发布成功了。 -->
+	<dubbo:annotation package="com.kavin.provider"/> 
+	
+</beans>
