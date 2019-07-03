@@ -11,9 +11,9 @@
    	<dubbo:protocol name="dubbo" port="20881" />     
 	<dubbo:service interface="com.yangs.test.service.DemoServer" ref="demoService" />
 	<bean id="demoService" class="com.yangs.test.service.impl.DemoServerImpl" />  -->
+	
+	
 	<!-- 以上是配置实现，下面使用注解实现 -->
-	
-	
 	<dubbo:application name="dubbo-provider"/>
 	<dubbo:registry  protocol="zookeeper"  address="192.168.140.132:2181"  />
    	<dubbo:protocol name="dubbo" port="20881" />     

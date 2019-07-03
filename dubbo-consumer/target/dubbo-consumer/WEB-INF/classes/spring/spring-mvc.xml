@@ -10,8 +10,9 @@
    http://www.springframework.org/schema/context/spring-context-3.0.xsd
    http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
  
-   <!-- 开启注解扫描  扫描spring注解注册到spring容器中 -->
-   <context:component-scan base-package="com.kavin.consumer" />
+   <!-- 开启注解扫描  扫描controller路径下的javaBean注册到springMVC容器中 -->
+   <!-- 建议springMVC配置文件扫描路径只扫描controller下面的javaBean。避免与Spring容器重复扫描 -->
+   <context:component-scan base-package="com.kavin.consumer.controller" />
  	<!-- 配置视图解析器，并指定视图所在的文件夹 -->
    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
       <property name="prefix" value="/html/" />

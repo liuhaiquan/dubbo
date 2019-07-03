@@ -7,7 +7,6 @@
   <modules>
   	<module>dubbo-consumer</module>
   	<module>dubbo-provider</module>
-  	<module>dubbo-pojo</module>
   	<module>dubbo-api</module>
   </modules>
   

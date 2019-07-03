@@ -10,13 +10,9 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
   </parent>
   <artifactId>dubbo-provider</artifactId>
   <packaging>war</packaging>
+  <description>dubbo服务生产者</description>
 
   <dependencies>
-  	    <dependency>
-    	  <groupId>com.kavin</groupId>
-    	  <artifactId>dubbo-pojo</artifactId>    
-    	  <version>0.0.1-SNAPSHOT</version>
-    	</dependency>
     	<dependency>
     	  <groupId>com.kavin</groupId>
     	  <artifactId>dubbo-api</artifactId>    

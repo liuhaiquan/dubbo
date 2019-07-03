@@ -10,14 +10,8 @@
   </parent>
   <artifactId>dubbo-consumer</artifactId>
   <packaging>war</packaging>
-  
+  <description>dubbo服务消费者</description>
   <dependencies>
-  
-  	    <dependency>
-    	  <groupId>com.kavin</groupId>
-    	  <artifactId>dubbo-pojo</artifactId>    
-    	  <version>0.0.1-SNAPSHOT</version>
-    	</dependency>
     	<dependency>
     	  <groupId>com.kavin</groupId>
     	  <artifactId>dubbo-api</artifactId>    

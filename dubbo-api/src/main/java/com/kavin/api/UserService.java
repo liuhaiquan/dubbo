@@ -1,7 +1,4 @@
 package com.kavin.api;
-
-import java.util.List;
-
 /**
  * dubbo 对外提供的服务接口 
  * @author Kavin
@@ -9,8 +6,5 @@ import java.util.List;
  */
 public interface UserService {
 
-	    public String sayHello(String name);
-
-	    public List getUsers();
-	
+	    public String sayHello(String name);	
 }
