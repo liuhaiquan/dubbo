@@ -5,6 +5,10 @@
   <display-name>dubbo-consumer</display-name>
      <!-- 根上下文加载配置文件   dubbo的文件加载到spring容器中，
       spring容器才能解析dubbo的注解。而下面的springMVC则无法识别dubbo注解 -->
+	
+    <!-- 给Listener指定要加载的xml,不指定则会去加载/WEB-INF/下的applicationContext.xml，
+      如果/WEB-INF下无applicationContext.xml,则会报错。
+     -->	
     <context-param>  
 	       <param-name>contextConfigLocation</param-name>
 	       <param-value>classpath:spring/root-*.xml</param-value>
@@ -17,7 +21,10 @@
    <servlet>
       <servlet-name>SpringMVC</servlet-name>
       <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-	  <init-param>  <!-- 加载配置文件  -->
+	 <!-- 给springMVC指定要加载的xml,不指定则会去加载/WEB-INF/ 目录下的${servlet-name}-servlet 名称的默认配置文件，
+          如果/WEB-INF下无{servlet-name}-servlet 名称的配置文件则会报错。
+         --> 
+	  <init-param>  
 	       <param-name>contextConfigLocation</param-name>
 	       <param-value>classpath:spring/spring-mvc.xml</param-value>
 	  </init-param>
