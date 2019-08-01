@@ -5,7 +5,11 @@
          version="4.0">
 		<welcome-file-list>
 		    <welcome-file>index.html</welcome-file>
-		</welcome-file-list>     
+		</welcome-file-list>   
+	
+    <!-- 给Listener指定要加载的xml,不指定则会去加载/WEB-INF/下的applicationContext.xml，
+      如果/WEB-INF下无applicationContext.xml,则会报错。
+     -->	
     <context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>
@@ -23,6 +27,9 @@
    <servlet>
       <servlet-name>SpringMVC</servlet-name>
       <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+	 <!-- 给springMVC指定要加载的xml,不指定则会去加载/WEB-INF/ 目录下的${servlet-name}-servlet 名称的默认配置文件，
+          如果/WEB-INF下无{servlet-name}-servlet 名称的配置文件则会报错。
+         --> 
 	  <init-param>
 	       <param-name>contextConfigLocation</param-name>
 	       <param-value>classpath:spring/spring-*.xml</param-value>
